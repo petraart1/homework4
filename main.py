@@ -188,7 +188,7 @@ def interpret(code_path, mem_start, mem_end, result_path):
         'memory_dump': {
             'start': mem_start,
             'end': mem_end,
-            'data': vm.memory[mem_start:mem_end+1]
+            'data': vm.regs[mem_start:mem_end+1]
         }
     }
 
@@ -198,7 +198,8 @@ def interpret(code_path, mem_start, mem_end, result_path):
 
 def main():
     assemble('input.asm', 'output.bin', 'log.yaml')
-    interpret('output.bin', 0, 9, 'result.yaml')
+    interpret('output.bin', 0, 30, 'result.yaml')
+
 
 if __name__ == "__main__":
     main()
